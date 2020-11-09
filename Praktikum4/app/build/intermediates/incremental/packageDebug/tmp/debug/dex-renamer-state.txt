@@ -1,4 +1,4 @@
-#Mon Nov 09 07:38:51 ICT 2020
+#Mon Nov 09 14:21:29 ICT 2020
 base.0=C\:\\Users\\Hasna\\Documents\\MyGithub\\Task\\-IF06SC1-18102124-HASNA-NUR-HANIFAH-\\Praktikum4\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex
