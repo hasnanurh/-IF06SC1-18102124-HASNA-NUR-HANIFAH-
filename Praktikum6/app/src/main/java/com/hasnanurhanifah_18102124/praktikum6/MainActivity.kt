@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.hasnanurhanifah_18102124.praktikum6.adapter.GridMyDataAdapter
 import com.hasnanurhanifah_18102124.praktikum6.adapter.ListMyDataAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -41,6 +43,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showRecyclerGrid(){
+        rv_mydata.layoutManager = GridLayoutManager(this, 2)
+        val gridMyDataAdapter = GridMyDataAdapter(list)
+        rv_mydata.adapter = gridMyDataAdapter
 
     }
 
@@ -68,4 +73,6 @@ class MainActivity : AppCompatActivity() {
 
         }
     }
+
+
 }
