@@ -9,6 +9,19 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
-    fun 
+    fun getListMyDatas(): ArrayList<MyData> {
+        val dataName = resources.getStringArray(R.array.data_name)
+        val dataDescription = resources.getStringArray(R.array.data_description)
+        val dataPhoto = resources.getStringArray(R.array.data_photo)
+        val listMyData = ArrayList<MyData>()
+        for (position in dataName.indices) {
+            val myData = MyData(
+                dataName[position],
+                dataDescription[position],
+                dataPhoto[position]
+            ) listMyData.add (myData)
+        }return listMyData
+    }
+
 
 }
