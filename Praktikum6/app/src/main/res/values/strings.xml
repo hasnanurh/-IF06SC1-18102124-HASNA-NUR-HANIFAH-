@@ -17,6 +17,8 @@
         <item>Watu Meja</item>
         <item>Curug Telu</item>
         <item>Curug Gomblang</item>
+        <item>Lokawisata Baturaden</item>
+        <item>Desa Wisata Ketenger Baturaden</item>
     </string-array>
     <string-array name="data_description">
         <item>Berada di lereng Gunung Slamet, wisata Pagubugan akan membawa Anda merasakan betapa
@@ -103,6 +105,20 @@
             curug Gomblang juga memiliki fasilitas berupa papan berbentuk hati yang berada tepat di depan
             curahan air terjun. Fasilitas ini kerap dijadikan spot foto oleh para pengunjung.
         </item>
+        <item>
+            Lokawisata Baturaden yang berada di Karangmangu, Baturaden, Kabupaten Banyumas atau berjarak
+            sekitar 15 kilometer dari pusat Kota Purwokerto. Lokawisata Baturaden Banyumas merupakan
+            destinasi wisata yang cocok dikunjungi bersama keluarga, karena di dalamnya terdapat berbagai
+            fasilitas hiburan yang dapat dinikmati anak-anak hingga dewasa. Lokasinya yang berada di kaki Gunung
+            Slamet membuat hawa di Lokawisata Baturaden terasa sejuk.Beberapa wahana rekreasi yang ada di dalam
+            Lokawisata Baturaden antara lain, kolam renang dengan papan seluncur, sepeda air, air terjun, dan pemandian air panas belerang.
+        </item>
+        <item>
+            Lokasi wisata Desa Wisata Ketenger ini terletak di alamat Dusun II Ketenger, Ketenger, Kec. Baturaden, Kabupaten Banyumas, Jawa Tengah
+            Desa Wisata Ketenger adalah salah satu desa mandiri yang sukses mengubah tatanan desa menjadi tempat wisata yang layak untuk dikunjungi,
+            seperti halnya Desa Wisata yang ada di Malang yaitu Desa Wisata Pujon Kidul.Desa Wisata Ketenger ini menyajikan paket wisata yang lengkap
+            seperti air terjunnya, keindahan aliran sungai yang begitu jernih, nuansa alam yang begitu menyejukkan hingga keramah tamahan masyarakat Desa Wisata Ketenger.
+        </item>
     </string-array>
     <string-array name="data_photo">
         <item>https://indonesia.tripcanvas.co/id/wp-content/uploads/sites/2/2019/09/18-1-by-@miftakhulmukhasin-@hengki_pamungkas-740x294.jpg</item>
@@ -113,8 +129,10 @@
         <item>https://jelajahkhatulistiwa.com/wp-content/uploads/2018/07/4326654_orig.jpg</item>
         <item>https://www.datawisata.com/wp-content/uploads/2019/03/Small-World-Purwokerto-keluyuranaja.jpg</item>
         <item>https://1.bp.blogspot.com/-T3l1hJKphdQ/Xjf-1CR2q_I/AAAAAAAAFYU/4gRrbblGQN8qVhR9C503UbVHSmiseIIIwCLcBGAsYHQ/s640/alamat-dan-harga-tiket-masuk-bukit-watu-meja-banyumas.jpg</item>
-        <item>https://i.ytimg.com/vi/GwJ7_zoB_GU/hqdefault.jpg</item>
+        <item>https://petualang.travelingyuk.com/uploads/2017/01/Curug-Telu.jpg</item>
         <item>https://www.purwokertoguidance.com/wp-content/uploads/2016/08/Selfie-Deck-Curug-Gomblang.jpg</item>
+        <item>https://petualang.travelingyuk.com/uploads/2017/01/Lokawisata-Baturaden.jpg</item>
+        <item>https://petualang.travelingyuk.com/uploads/2017/01/Curug-bayan.jpg</item>
 
     </string-array>
 </resources>
