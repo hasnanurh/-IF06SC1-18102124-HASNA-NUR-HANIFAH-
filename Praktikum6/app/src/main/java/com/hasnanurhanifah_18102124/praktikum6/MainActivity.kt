@@ -26,8 +26,10 @@ class MainActivity : AppCompatActivity() {
                 dataName[position],
                 dataDescription[position],
                 dataPhoto[position]
-            ) listMyData.add (myData)
-        } return listMyData
+            )
+            listMyData.add (myData)
+        }
+        return listMyData
     }
 
     private fun showRecyclerList() {
