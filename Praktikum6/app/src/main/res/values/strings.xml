@@ -1,0 +1,138 @@
+<resources>
+    <string name="app_name">Praktikum 6</string>
+    <string name="name">Nama</string>
+    <string name="description">Deskripsi</string>
+    <string name="tampil_list">Tampil List</string>
+    <string name="tampil_grid">Tampil Grid</string>
+    <string name="tampil_card_view">Tampil Card View</string>
+    <string name="todo">To Do</string>
+    <string-array name="data_name">
+        <item>Wisata Pagubugan</item>
+        <item>The Village Purwokerto</item>
+        <item>Bukit Pandang Munggang</item>
+        <item>Hutan Pinus Limpakuwus</item>
+        <item>Curug Jenggala</item>
+        <item>Pancuran Pitu</item>
+        <item>Small World Miniatur Dunia</item>
+        <item>Watu Meja</item>
+        <item>Curug Telu</item>
+        <item>Curug Gomblang</item>
+        <item>Lokawisata Baturaden</item>
+        <item>Desa Wisata Ketenger Baturaden</item>
+    </string-array>
+    <string-array name="data_description">
+        <item>Berada di lereng Gunung Slamet, wisata Pagubugan akan membawa Anda merasakan betapa
+            tenang dan nyamannya berada di tengah persawahan dan bermain air di sungai. Eduwisata
+            yang berada di Desa Melung ini memiliki berbagai spot wisata menarik yang akan memanjakan
+            Anda. Mulai dari trek jogging, outbond, camping ground, sawah pelangi, taman kelinci,
+            berbagai spot foto keren dan juga Grujugan Bengkok.Di Grujugan Bengkok ini Anda bisa
+            mandi sepuasnya dan airnya sangat jernih, lho! Selain itu lintasan grujugan ini juga
+            panjang, melewati persawahan dan tidak dalam, sehingga aman buat si kecil. Selain itu
+            ada juga wisata bercocok tanam bagi anak paud, TK maupun SD yang berkunjung. Dan yang
+            terbaru ada kolam renang di tengah persawahan yang aman untuk anak-anak.
+        </item>
+        <item>Berlokasi tak terlalu jauh dengan pusat kota Purwokerto, The Village hadir dengan gaya
+        unik khas perkampungan Eropa. Bangunan tinggi besar menyerupai kastil dengan dinding bata
+        langsung mencuri perhatian begitu melangkahkan kaki ke sini. Ada beragam aktivitas yang bisa
+        Anda lakukan di sini: naik perahu mengitari kanal buatan di sekitar taman rekreasi, memberi
+        makan aneka binatang (burung, kelinci, sapi, domba), menunggang kuda, foto-foto dengan
+        kostum Belanda, dan masih banyak lagi!
+        </item>
+        <item>Berlokasi di Desa Ketenger, Baturraden, Banyumas Jawa Tengah. Dengan membayar tiket
+            masuk sebesar Rp.15.000,- kita sudah bisa menikmati udara sejuk khas pegunungan dan juga
+            sekaligus melihat kota Purwokerto dari ketinggian.Sepeti namanya bukit ini memang cocok
+            untuk kita yang ingin memandangi keindahan alam kota Purwokerto. Dari Bukit ini kita juga
+            dapat melihat keindahan Gunung Slamet dengan jelas. Ditambah lagi tempat ini juga biasa
+            dijadikan untuk area camping para wisatawan. Keindahan sesungguhnya akan terlihat pada
+            malam hari ketika kita diperlihatkan cahaya lampu kota Purwokerto yang begitu indah.
+            Dengan segala keindahan yang ada di tempat ini tentunya ada kekurangan dalam segi fasilitas
+            yang mungkin menjadi bahan pertimbangan anda untuk camping di tempat ini.
+        </item>
+        <item>
+            Hutan Pinus Limpakuwus merupakan satu wisata alam yang berada di lereng selatan Gunung
+            Slamet dan berada di ketinggian sekitar 700 mdpl. Tepatnya di Desa Limpakuwus, Kecamatan
+            Sumbang, Banyumas, Jawa Tengah. Suasana yang syahdu dengan panorama alam yang memukau,
+            membuat Hutan Pinus Limpakuwus bisa jadi pilihan wisata ketika berkunjung ke Banyumas.
+        </item>
+        <item>
+            Curug Jenggala adalah bagian dari kompleks dusun wisata Kalipagu. Lokasinya berada di
+            Jalan Pangeran Limboro, Dusun III Kalipagu, Ketenger, Kecamatan Baturaden, Kabupaten
+            Banyumas, Jawa Tengah. Objek wisata ini dapat dikenali dengan jajaran tiga air terjun
+            yang deras dan dek swafoto berbentuk hati.  Biasanya, Curug Jenggala ramai pada musim
+            liburan sebagai destinasi wisata keluarga.Meski membutuhkan waktu untuk dicapai, namun
+            akses jalan menuju air terjun kini sudah sangat rapi dan tertata. Rasa lelah akan terlupakan
+            dengan pemandangan alam Gunung Slamet yang masih hijau dan terjaga.
+        </item>
+        <item>
+            Obyek wisata Pancuran Pitu tepatnya berada di Desa Ketenger, Kecamatan Baturraden,
+            Kabupaten Banyumas, Jawa Tengah. Sesuai dengan namanya, total terdapat tujuh pancuran
+            tempat air mengalir dari sumbernya. Pitu adalah kata dalam bahasa Jawa yang memiliki arti
+            tujuh. Air yang mengalir dari ketujuh pancuran itu semuanya hangat.Ada banyak cara untuk
+            menikmati air hangat alami di Pancuran Pitu ini. Pengunjung bisa mencelupkan atau membasuh
+            kaki di titik pancuran. Bisa juga dengan mandi di kolam pemandian air hangat yang tersedia.
+        </item>
+        <item>
+            Berbeda dengan taman lainnya--Small World yang terletak di Baturaden ini memiliki
+            miniatur-miniatur bangunan ikon khas berbagai belahan dunia.Adapun miniatur ikon berbagai
+            negara di dunia tersebut, seperti Kincir Angin khas Belanda, Menara Eiffel Perancis,
+            patung Merlion. Kemudian Taman Bunga Sakura, White House, Menara Pisa hingga Tembok China.
+            Wisatawan juga bisa berkunjung ke berbagai rumah tradisional dan ikon khas dari
+            Indonesia, seperti Monas.
+        </item>
+        <item>
+             Wisata Bukit Watu Meja menyuguhkan pemandangan yang memanjakan mata. Tempatnya yang
+            instagramable menjadikannya tempat wisata favorit di Banyumas Jawa Tengah.
+            Landscape pegunungan nan indah di Bukit Watu Meja menjadi pemandangan utama, namun
+            selain itu ditambah lagi dengan adanya gardu pandang menjadikan lokasi ini cocok untuk
+            hunting foto. Terlebihnya udara di wisata Banyumas ini pun benar-benar sejuk karena
+            berada di puncak perbukitan watu Meja Banyumas. Dengan suasana asri di kawasan Bukit Watu
+            Meja ini tentu akan membuat betah berlama – lama disana. Disamping itu Fasilitas di Bukit
+            Watu Meja Banyumas sudah cukup memadai.
+        </item>
+        <item>Curug Telu berada di Desa Karangsalam, Kecamatan Baturraden.Sebelum masuk ke kawasan
+            curug Telu, kita sudah dimanjakan dengan pemandangan utuh gunung Slamet dengan sawah
+            di sisi kanan dan kiri jalan yg masih tanah bercampur batu. Melalui jalan ini, kita harus
+            hati-hati membawa kendaraan.Yang membuat curug ini cantik adalah selain airnya yang jernih,
+            curug ini memiliki tiga titik air yang mengalir dari atas kebawah. Selain itu, curug ini
+            juga jarang sekali terkena cahaya matahari kecuali jam 12 siang saat matahari berada tepat diatas kepala kita.
+        </item>
+        <item>
+            Curug Gomblang adalah salah satu air terjun yang berlokasi di lereng Gunung Slamet.
+            Lokasi yang jauh di dalam hutan lindung pemerintah, membuat Curug Gomblang masih alami
+            dan nyaman untuk dinikmati. Walaupun tidak terlalu tinggi namun debit air di Curug cukup
+            deras. Air terjun alami ini berlokasi di desa Baseh tepatnya di Desa Kalisalak, kecamatan
+            Kedung banteng, Kabupaten Banyumas, Jawa Tengah. Selain menyuguhkan pemandangan yang elok,
+            curug Gomblang juga memiliki fasilitas berupa papan berbentuk hati yang berada tepat di depan
+            curahan air terjun. Fasilitas ini kerap dijadikan spot foto oleh para pengunjung.
+        </item>
+        <item>
+            Lokawisata Baturaden yang berada di Karangmangu, Baturaden, Kabupaten Banyumas atau berjarak
+            sekitar 15 kilometer dari pusat Kota Purwokerto. Lokawisata Baturaden Banyumas merupakan
+            destinasi wisata yang cocok dikunjungi bersama keluarga, karena di dalamnya terdapat berbagai
+            fasilitas hiburan yang dapat dinikmati anak-anak hingga dewasa. Lokasinya yang berada di kaki Gunung
+            Slamet membuat hawa di Lokawisata Baturaden terasa sejuk.Beberapa wahana rekreasi yang ada di dalam
+            Lokawisata Baturaden antara lain, kolam renang dengan papan seluncur, sepeda air, air terjun, dan pemandian air panas belerang.
+        </item>
+        <item>
+            Lokasi wisata Desa Wisata Ketenger ini terletak di alamat Dusun II Ketenger, Ketenger, Kec. Baturaden, Kabupaten Banyumas, Jawa Tengah
+            Desa Wisata Ketenger adalah salah satu desa mandiri yang sukses mengubah tatanan desa menjadi tempat wisata yang layak untuk dikunjungi,
+            seperti halnya Desa Wisata yang ada di Malang yaitu Desa Wisata Pujon Kidul.Desa Wisata Ketenger ini menyajikan paket wisata yang lengkap
+            seperti air terjunnya, keindahan aliran sungai yang begitu jernih, nuansa alam yang begitu menyejukkan hingga keramah tamahan masyarakat Desa Wisata Ketenger.
+        </item>
+    </string-array>
+    <string-array name="data_photo">
+        <item>https://indonesia.tripcanvas.co/id/wp-content/uploads/sites/2/2019/09/18-1-by-@miftakhulmukhasin-@hengki_pamungkas-740x294.jpg</item>
+        <item>https://indonesia.tripcanvas.co/id/wp-content/uploads/sites/2/2019/09/21-2-by-@The-Village-Purwokerto-740x740.jpg</item>
+        <item>https://sgp1.digitaloceanspaces.com/tz-mag-id/wp-content/uploads/2019/02/050502020505/2-1-Munggang-By-fhm_atm.jpg</item>
+        <item>https://sgp1.digitaloceanspaces.com/tz-mag-id/wp-content/uploads/2018/09/070709092121/5-1-Limpakuwus-By-fia_hartono.jpg</item>
+        <item>https://travelspromo.com/wp-content/uploads/2019/11/12-Love-Deck-Ilham-Wahyu-Alfian-e1573786242992-768x480.jpg</item>
+        <item>https://jelajahkhatulistiwa.com/wp-content/uploads/2018/07/4326654_orig.jpg</item>
+        <item>https://www.datawisata.com/wp-content/uploads/2019/03/Small-World-Purwokerto-keluyuranaja.jpg</item>
+        <item>https://1.bp.blogspot.com/-T3l1hJKphdQ/Xjf-1CR2q_I/AAAAAAAAFYU/4gRrbblGQN8qVhR9C503UbVHSmiseIIIwCLcBGAsYHQ/s640/alamat-dan-harga-tiket-masuk-bukit-watu-meja-banyumas.jpg</item>
+        <item>https://petualang.travelingyuk.com/uploads/2017/01/Curug-Telu.jpg</item>
+        <item>https://www.purwokertoguidance.com/wp-content/uploads/2016/08/Selfie-Deck-Curug-Gomblang.jpg</item>
+        <item>https://petualang.travelingyuk.com/uploads/2017/01/Lokawisata-Baturaden.jpg</item>
+        <item>https://petualang.travelingyuk.com/uploads/2017/01/Curug-bayan.jpg</item>
+
+    </string-array>
+</resources>
