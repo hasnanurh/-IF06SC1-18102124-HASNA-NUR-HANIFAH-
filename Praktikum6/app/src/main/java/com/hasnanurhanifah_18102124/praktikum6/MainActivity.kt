@@ -50,6 +50,12 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    private fun showRecyclerCardView() {
+        rv_mydata.layoutManager = LinearLayoutManager(this)
+        val cardViewMyDataAdapter  = CardViewMyDataAdapter (list, this@MainActivity)
+        rv_mydata.adapter = cardViewMyDataAdapter
+    }
+
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu, menu)
         return super.onCreateOptionsMenu(menu)
@@ -76,11 +82,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun showRecyclerCardView() {
-        rv_mydata.layoutManager = LinearLayoutManager(this)
-        val cardViewMyDataAdapter  = CardViewMyDataAdapter (list)
-        rv_mydata.adapter = cardViewMyDataAdapter
-    }
+
 
 
 }

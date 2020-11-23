@@ -1,5 +1,7 @@
 package com.hasnanurhanifah_18102124.praktikum6.adapter
 
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,10 +12,11 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.hasnanurhanifah_18102124.praktikum6.DetailActivity
 import com.hasnanurhanifah_18102124.praktikum6.MyData
 import com.hasnanurhanifah_18102124.praktikum6.R
 
-class CardViewMyDataAdapter (private val listMyDatas: ArrayList<MyData>) :
+class CardViewMyDataAdapter(private val listMyDatas: ArrayList<MyData>, val context: Context) :
     RecyclerView.Adapter<CardViewMyDataAdapter.CardViewViewHolder>() {
 
     inner class CardViewViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -25,7 +28,8 @@ class CardViewMyDataAdapter (private val listMyDatas: ArrayList<MyData>) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardViewViewHolder {
-        val view: View= LayoutInflater.from(parent.context).inflate(R.layout.item_cardview, parent, false)
+        val view: View =
+            LayoutInflater.from(parent.context).inflate(R.layout.item_cardview, parent, false)
         return CardViewViewHolder(view)
     }
 
@@ -41,11 +45,22 @@ class CardViewMyDataAdapter (private val listMyDatas: ArrayList<MyData>) :
             .into(holder.imgPhoto)
         holder.tvName.text = myData.name
         holder.tvDetail.text = myData.description
-        holder.btnFavorite.setOnClickListener { Toast.makeText(holder.itemView.context, "Favorite " +
-                listMyDatas[holder.adapterPosition].name, Toast.LENGTH_SHORT).show() }
-        holder.btnShare.setOnClickListener { Toast.makeText(holder.itemView.context, "Share " +
-                listMyDatas[holder.adapterPosition].name, Toast.LENGTH_SHORT).show() }
-        holder.itemView.setOnClickListener { Toast.makeText(holder.itemView.context, "Kamu memilih " +
-                listMyDatas[holder.adapterPosition].name, Toast.LENGTH_SHORT).show() }
+        holder.btnFavorite.setOnClickListener {
+            Toast.makeText(
+                holder.itemView.context, "Favorite " +
+                        listMyDatas[holder.adapterPosition].name, Toast.LENGTH_SHORT
+            ).show()
+        }
+        holder.btnShare.setOnClickListener {
+            Toast.makeText(
+                holder.itemView.context, "Share " +
+                        listMyDatas[holder.adapterPosition].name, Toast.LENGTH_SHORT
+            ).show()
+        }
+        holder.itemView.setOnClickListener {
+            val moveWithObjectIntent = Intent(context, DetailActivity::class.java)
+            moveWithObjectIntent.putExtra (DetailActivity.EXTRA_MYDATA, myData)
+            context.startActivity(moveWithObjectIntent)
+        }
     }
 }
