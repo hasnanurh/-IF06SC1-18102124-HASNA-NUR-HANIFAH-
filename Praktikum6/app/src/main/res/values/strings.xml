@@ -135,6 +135,36 @@
         <item>https://petualang.travelingyuk.com/uploads/2017/01/Curug-bayan.jpg</item>
 
     </string-array>
+    <string-array name="data_lat">
+        <item>-7.333797</item>
+        <item>-7.374473</item>
+        <item>-7.31716</item>
+        <item>-7.30733</item>
+        <item>-7.30901</item>
+        <item>-7.30999</item>
+        <item>-7.33128</item>
+        <item>-7.51899</item>
+        <item>-7.31989 </item>
+        <item>-7.32369</item>
+        <item>-7.31326</item>
+        <item>-7.32465</item>
+
+    </string-array>
+    <string-array name="data_lang">
+        <item>109.206959</item>
+        <item>109.240532</item>
+        <item>109.219378</item>
+        <item>109.24377</item>
+        <item>109.20878</item>
+        <item>109.21792</item>
+        <item>109.22517</item>
+        <item>109.21450</item>
+        <item>109.24194</item>
+        <item> 109.18139</item>
+        <item>109.22902</item>
+        <item>109.22367</item>
+    </string-array>
+
     <string name="title_activity_detail">ScrollingActivity</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
