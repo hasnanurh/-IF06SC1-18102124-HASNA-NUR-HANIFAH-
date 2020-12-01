@@ -1,0 +1,2 @@
+com/hasnanurhanifah_18102124/praktikum4/BuildConfig.java
+ com.hasnanurhanifah_18102124.praktikum4.BuildConfig
