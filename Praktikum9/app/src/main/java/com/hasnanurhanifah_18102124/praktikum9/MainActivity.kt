@@ -3,6 +3,8 @@ package com.hasnanurhanifah_18102124.praktikum9
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatDelegate
 import com.hasnanurhanifah_18102124.praktikum9.data.SettingModel
 import com.hasnanurhanifah_18102124.praktikum9.databinding.ActivityMainBinding
@@ -53,6 +55,23 @@ class MainActivity : AppCompatActivity() {
         if (requestCode == REQUEST_CODE) {
             if (resultCode == SettingPreferenceActivity.RESULT_CODE) {
                 showExistingPreference()
+            }
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        setMode(item.itemId)
+        return super.onOptionsItemSelected(item)
+    }
+    private fun setMode(selectedMode: Int) {
+        when (selectedMode) {
+            R.id.action_settings -> {
+                val intent = Intent(this@MainActivity, SettingPreferenceActivity::class.java)
+                startActivityForResult(intent, REQUEST_CODE)
             }
         }
     }
