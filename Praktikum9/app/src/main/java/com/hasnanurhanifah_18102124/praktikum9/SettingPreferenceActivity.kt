@@ -35,6 +35,8 @@ class SettingPreferenceActivity : AppCompatActivity(), View.OnClickListener {
             val email = binding.edtEmail.text.toString().trim()
             val age = binding.edtAge.text.toString().trim()
             val phoneNo = binding.edtPhone.text.toString().trim()
+            val hobi = binding.edtHobi.text.toString().trim()
+            val address = binding.edtAddress.text.toString().trim()
             val isLoveMU = binding.rgLoveMu.checkedRadioButtonId == R.id.rb_yes
             if (name.isEmpty()) {
                 binding.edtName.error = getString(R.string.field_required)
@@ -56,11 +58,21 @@ class SettingPreferenceActivity : AppCompatActivity(), View.OnClickListener {
                 binding.edtPhone.error = getString(R.string.field_required)
                 return
             }
+
+            if (hobi.isEmpty()) {
+                binding.edtHobi.error = getString(R.string.field_required)
+                return
+            }
+            if (address.isEmpty()) {
+                binding.edtAddress.error = getString(R.string.field_required)
+                return
+            }
+
             if (!TextUtils.isDigitsOnly(phoneNo)) {
                 binding.edtPhone.error = getString(R.string.field_digit_only)
                 return
             }
-            saveSetting(name, email, age, phoneNo, isLoveMU)
+            saveSetting(name, email, age, phoneNo, hobi, address, isLoveMU)
             val resultIntent = Intent()
             setResult(RESULT_CODE, resultIntent)
             finish()
@@ -77,6 +89,8 @@ class SettingPreferenceActivity : AppCompatActivity(), View.OnClickListener {
         binding.edtEmail.setText(settingModel.email)
         binding.edtAge.setText(settingModel.age.toString())
         binding.edtPhone.setText(settingModel.phoneNumber)
+        binding.edtHobi.setText(settingModel.hobi)
+        binding.edtAddress.setText(settingModel.address)
         if (settingModel.isDarkTheme) {
             binding.rbYes.isChecked = true
         } else {
@@ -84,12 +98,14 @@ class SettingPreferenceActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    private fun saveSetting(name: String, email: String, age: String, phoneNo: String, isDark: Boolean) {
+    private fun saveSetting(name: String, email: String, age: String, phoneNo: String, hobi: String, address: String, isDark: Boolean) {
         val settingPreference = SettingPreference(this)
         settingModel.name = name
         settingModel.email = email
         settingModel.age = Integer.parseInt(age)
         settingModel.phoneNumber = phoneNo
+        settingModel.hobi = hobi
+        settingModel.address = address
         settingModel.isDarkTheme = isDark
         settingPreference.setSetting(settingModel)
         Toast.makeText(this, "Data tersimpan", Toast.LENGTH_SHORT).show()
