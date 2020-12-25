@@ -3,7 +3,7 @@ package com.hasnanurhanifah_18102124.praktikum9.preferences
 import android.content.Context
 import com.hasnanurhanifah_18102124.praktikum9.data.SettingModel
 
-class SettingPreference {
+
     internal class SettingPreference(context: Context) {
         companion object {
             private const val PREFS_NAME = "setting_pref"
@@ -25,5 +25,14 @@ class SettingPreference {
             editor.apply()
         }
 
+        fun getSetting(): SettingModel {
+            val model = SettingModel()
+            model.name = preferences.getString(NAME, "")
+            model.email = preferences.getString(EMAIL, "")
+            model.age = preferences.getInt(AGE, 0)
+            model.phoneNumber = preferences.getString(PHONE_NUMBER, "")
+            model.isDarkTheme = preferences.getBoolean(THEME, false)
+            return model
+        }
+
     }
-}
