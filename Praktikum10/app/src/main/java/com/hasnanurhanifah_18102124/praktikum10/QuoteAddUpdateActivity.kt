@@ -14,7 +14,7 @@ import com.hasnanurhanifah_18102124.praktikum10.helper.EXTRA_POSITION
 import com.hasnanurhanifah_18102124.praktikum10.helper.EXTRA_QUOTE
 import com.hasnanurhanifah_18102124.praktikum10.helper.categoryList
 
-class QuoteAddUpdateActivity : AppCompatActivity() {
+class QuoteAddUpdateActivity : AppCompatActivity(), View.OnClickListener {
     private var isEdit = false
     private var quote: Quote? = null
     private var position: Int = 0
@@ -66,6 +66,10 @@ class QuoteAddUpdateActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         binding.btnSubmit.text = btnTitle
         binding.btnSubmit.setOnClickListener(this)
+    }
+
+    override fun onClick(v: View?) {
+        TODO("Not yet implemented")
     }
 
 }
