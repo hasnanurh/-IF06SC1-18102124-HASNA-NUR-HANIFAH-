@@ -1,8 +1,10 @@
 package com.hasnanurhanifah_18102124.praktikum11
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -23,7 +25,38 @@ class SigninActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-        TODO("Not yet implemented")
+        override fun onClick(v: View) {
+            when (v.id) {
+                R.id.btnSign -> {
+                    signIn(binding.inputEmail.text.toString(),
+                        binding.inputPassword.text.toString())
+                }
+                R.id.tvSignUp -> {
+                    val intent = Intent(this@SigninActivity, SignUpActivity::class.java)
+                    startActivity(intent)
+                }
+            }
+        }
+
     }
+
+    private fun signIn(email: String, password: String) {
+        if (!validateForm()) {
+            return
+        }
+        auth.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    finish()
+                    val intent = Intent(this@SigninActivity,
+                        MainActivity::class.java)
+                    startActivity(intent)
+                } else {
+                    Toast.makeText(baseContext, "Authentication failed.",
+                        Toast.LENGTH_SHORT).show()
+                }
+            }
+    }
+
 
 }
