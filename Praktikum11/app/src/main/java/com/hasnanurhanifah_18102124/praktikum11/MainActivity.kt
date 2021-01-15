@@ -13,14 +13,13 @@ import com.hasnanurhanifah_18102124.praktikum11.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var auth: FirebaseAuth
     private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         auth = Firebase.auth
-        binding.btnSignOut.setOnClickListener(this)
-        binding.btnEmailVerify.setOnClickListener(this)
-
+        
         val currentUser = auth.currentUser
         if (currentUser == null) {
             val intent = Intent(this@MainActivity, SigninActivity::class.java)
@@ -38,6 +37,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             startActivity(intent)
             finish()
         }
+        binding.btnSignOut.setOnClickListener(this)
+        binding.btnEmailVerify.setOnClickListener(this)
     }
 
     override fun onClick(v: View) {
