@@ -1,5 +1,6 @@
 package com.hasnanurhanifah_18102124.praktikum11
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,6 +8,9 @@ import android.text.TextUtils
 import android.view.View
 import android.widget.Toast
 import androidx.core.view.isVisible
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
@@ -16,12 +20,17 @@ import com.hasnanurhanifah_18102124.praktikum11.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var auth: FirebaseAuth
     private lateinit var binding: ActivityMainBinding
-
+    private lateinit var googleSignInClient: GoogleSignInClient
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         auth = Firebase.auth
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken(getString(R.string.default_web_client_id))
+            .requestEmail()
+            .build()
+        googleSignInClient = GoogleSignIn.getClient(this, gso)
 
         val currentUser = auth.currentUser
         if (currentUser == null) {
@@ -29,10 +38,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             startActivity(intent)
             finish()
         }
-        else{
-            updateUI(currentUser)
-        }
-
+        binding.btnEmailVerify.isVisible = false
     }
 
     public override fun onStart() {
@@ -48,6 +54,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         }
         binding.btnSignOut.setOnClickListener(this)
         binding.btnEmailVerify.setOnClickListener(this)
+
     }
 
     override fun onClick(v: View) {
@@ -78,6 +85,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 }
             }
     }
+
     private fun signOut() {
         auth.signOut()
         val currentUser = auth.currentUser
@@ -86,8 +94,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             startActivity(intent)
             finish()
         }
-    }
+        googleSignInClient.signOut().addOnCompleteListener(this) {
 
+        }
+    }
+    @SuppressLint("SetTextI18n")
     private fun updateUI(currentUser: FirebaseUser) {
         currentUser?.let {
             val name = currentUser.displayName
@@ -103,7 +114,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             binding.tvUserId.text = email
             for (profile in it.providerData) {
                 val providerId = profile.providerId
-                if(providerId=="password" && emailVerified==true){
+                if(providerId=="password" && emailVerified == false){
                     binding.btnEmailVerify.isVisible = false
                 }
                 if(providerId=="phone"){
