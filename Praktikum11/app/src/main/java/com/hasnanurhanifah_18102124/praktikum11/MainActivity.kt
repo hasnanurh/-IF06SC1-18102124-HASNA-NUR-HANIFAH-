@@ -8,6 +8,8 @@ import android.text.TextUtils
 import android.view.View
 import android.widget.Toast
 import androidx.core.view.isVisible
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -121,6 +123,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     binding.tvName.text = phoneNumber
                     binding.tvUserId.text = providerId
                 }
+            }
+            if(photoUrl !== null){
+                Glide.with(this)
+                    .load(photoUrl)
+                    .apply(RequestOptions().override(200, 200))
+                    .into(binding.ivImage)
             }
         }
     }
