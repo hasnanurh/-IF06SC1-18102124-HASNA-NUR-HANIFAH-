@@ -10,14 +10,15 @@ import android.widget.Toast
 import androidx.core.view.isVisible
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
-import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.hasnanurhanifah_18102124.praktikum11.databinding.ActivityMainBinding
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var auth: FirebaseAuth
@@ -33,7 +34,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             .requestEmail()
             .build()
         googleSignInClient = GoogleSignIn.getClient(this, gso)
-
         val currentUser = auth.currentUser
         if (currentUser == null) {
             val intent = Intent(this@MainActivity, SigninActivity::class.java)
@@ -42,7 +42,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         }
         binding.btnEmailVerify.isVisible = false
     }
-
     public override fun onStart() {
         super.onStart()
         val currentUser = auth.currentUser
@@ -56,9 +55,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         }
         binding.btnSignOut.setOnClickListener(this)
         binding.btnEmailVerify.setOnClickListener(this)
-
     }
-
     override fun onClick(v: View) {
         when (v.id) {
             R.id.btnSignOut -> {
@@ -69,7 +66,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
         }
     }
-
     private fun sendEmailVerification() {
         binding.btnEmailVerify.isEnabled = false
         val user = auth.currentUser!!
@@ -87,7 +83,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 }
             }
     }
-
     private fun signOut() {
         auth.signOut()
         val currentUser = auth.currentUser
@@ -97,18 +92,23 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             finish()
         }
         googleSignInClient.signOut().addOnCompleteListener(this) {
-
         }
     }
     @SuppressLint("SetTextI18n")
     private fun updateUI(currentUser: FirebaseUser) {
-        currentUser?.let {
+        currentUser.let {
             val name = currentUser.displayName
             val phoneNumber = currentUser.phoneNumber
             val email = currentUser.email
             val photoUrl = currentUser.photoUrl
             val emailVerified = currentUser.isEmailVerified
-            val uid = currentUser.uid
+//            val uid = currentUser.uid
+            if(photoUrl !== null){
+                Glide.with(this)
+                    .load(photoUrl)
+                    .apply(RequestOptions().override(200, 200))
+                    .into(binding.ivImage)
+            }
             binding.tvName.text = name
             if(TextUtils.isEmpty(name)){
                 binding.tvName.text = "No Name"
@@ -116,22 +116,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             binding.tvUserId.text = email
             for (profile in it.providerData) {
                 val providerId = profile.providerId
-                if(providerId=="password" && emailVerified == false){
-                    binding.btnEmailVerify.isVisible = false
+                if(providerId=="password" && emailVerified==false){
+                    binding.btnEmailVerify.isVisible = true
                 }
                 if(providerId=="phone"){
                     binding.tvName.text = phoneNumber
                     binding.tvUserId.text = providerId
                 }
             }
-            if(photoUrl !== null){
-                Glide.with(this)
-                    .load(photoUrl)
-                    .apply(RequestOptions().override(200, 200))
-                    .into(binding.ivImage)
-            }
         }
     }
-
-
 }

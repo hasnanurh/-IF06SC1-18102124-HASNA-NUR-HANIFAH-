@@ -20,7 +20,6 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener {
         binding.btnCreateAccount.setOnClickListener(this)
         auth = Firebase.auth
     }
-
     override fun onClick(v: View) {
         when (v.id) {
             R.id.btnCreateAccount -> {
@@ -46,7 +45,6 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener {
                 }
             }
     }
-
     private fun validateForm(): Boolean {
         var valid = true
         val email = binding.inputEmail.text.toString()
@@ -65,7 +63,5 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener {
         }
         return valid
     }
-
-
 
 }

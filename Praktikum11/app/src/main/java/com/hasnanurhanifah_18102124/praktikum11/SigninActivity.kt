@@ -21,24 +21,21 @@ class SigninActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var auth: FirebaseAuth
     private lateinit var binding: ActivitySigninBinding
     private lateinit var googleSignInClient: GoogleSignInClient
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySigninBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         binding.btnSign.setOnClickListener(this)
         binding.tvSignUp.setOnClickListener(this)
         binding.btnEmail.setOnClickListener(this)
         binding.btnPhone.setOnClickListener(this)
-
         auth = Firebase.auth
-
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
             .requestEmail()
             .build()
         googleSignInClient = GoogleSignIn.getClient(this, gso)
+
     }
 
     override fun onClick(v: View) {
@@ -54,7 +51,6 @@ class SigninActivity : AppCompatActivity(), View.OnClickListener {
             R.id.btnEmail -> {
                 signIn()
             }
-
         }
     }
 
@@ -62,7 +58,6 @@ class SigninActivity : AppCompatActivity(), View.OnClickListener {
         val signInIntent = googleSignInClient.signInIntent
         startActivityForResult(signInIntent, 9001)
     }
-
     private fun signIn(email: String, password: String) {
         if (!validateForm()) {
             return
@@ -109,7 +104,6 @@ class SigninActivity : AppCompatActivity(), View.OnClickListener {
             finish()
         }
     }
-
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 9001) {
