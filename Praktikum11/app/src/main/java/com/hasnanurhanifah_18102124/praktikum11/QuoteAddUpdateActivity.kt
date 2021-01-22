@@ -7,7 +7,13 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import com.hasnanurhanifah_18102124.praktikum11.data.Quote
 import com.hasnanurhanifah_18102124.praktikum11.databinding.ActivityQuoteAddUpdateBinding
 import com.hasnanurhanifah_18102124.praktikum11.helper.ALERT_DIALOG_CLOSE
@@ -17,6 +23,8 @@ import com.hasnanurhanifah_18102124.praktikum11.helper.EXTRA_QUOTE
 import kotlinx.android.synthetic.main.activity_quote_add_update.*
 
 class QuoteAddUpdateActivity : AppCompatActivity(), View.OnClickListener {
+    private lateinit var auth: FirebaseAuth
+    private lateinit var firestore: FirebaseFirestore
     private var isEdit = false
     private var categoriesSpinnerArray = ArrayList<String>()
     private var quote: Quote? = null
@@ -28,6 +36,8 @@ class QuoteAddUpdateActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         binding = ActivityQuoteAddUpdateBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        firestore = Firebase.firestore
+        auth = Firebase.auth
         categoriesSpinnerArray = getCategories()
         quote = intent.getParcelableExtra(EXTRA_QUOTE)
         if (quote != null) {
@@ -59,6 +69,26 @@ class QuoteAddUpdateActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun getCategories(): ArrayList<String> {
         progressbar.visibility = View.VISIBLE
+        firestore.collection("categories")
+            .whereEqualTo("is_active", true)
+            .get()
+            .addOnSuccessListener { documents ->
+                var selection = 0;
+                for (document in documents) {
+                    val name = document.get("name").toString()
+                    quote?.let {
+                        if(name==it.category){
+                            categorySelection = selection
+                        }
+                    }
+                    categoriesSpinnerArray.add(name)
+                    selection++
+                }
+                setCategories(categoriesSpinnerArray)
+            }
+            .addOnFailureListener { exception ->
+                Toast.makeText(this@QuoteAddUpdateActivity, "Categories cannot be retrieved ", Toast.LENGTH_SHORT).show()
+            }
         return categoriesSpinnerArray
     }
 
