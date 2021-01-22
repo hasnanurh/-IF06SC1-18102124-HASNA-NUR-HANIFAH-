@@ -105,9 +105,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 //            val uid = currentUser.uid
             if(photoUrl !== null){
                 Glide.with(this)
-                    .load(photoUrl)
-                    .apply(RequestOptions().override(200, 200))
-                    .into(binding.ivImage)
+                        .load(photoUrl)
+                        .apply(RequestOptions().override(200, 200))
+                        .into(binding.ivImage)
             }
             binding.tvName.text = name
             if(TextUtils.isEmpty(name)){
