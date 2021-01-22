@@ -51,6 +51,11 @@ class SigninActivity : AppCompatActivity(), View.OnClickListener {
             R.id.btnEmail -> {
                 signIn()
             }
+
+            R.id.btnPhone -> {
+                val intent = Intent(this@SigninActivity, PhoneAuthActivity::class.java)
+                startActivity(intent)
+            }
         }
     }
 
