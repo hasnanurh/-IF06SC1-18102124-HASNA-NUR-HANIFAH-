@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.hasnanurhanifah_18102124.praktikum14.databinding.ItemQuoteBinding
 import com.hasnanurhanifah_18102124.praktikum14.model.Quote
 
 class QuoteAdapter(private val activity: Activity): RecyclerView.Adapter<QuoteAdapter.QuoteViewHolder>() {
